@@ -51,7 +51,7 @@ export default class EditUpdate extends Component {
                 if (res.data.length > 0) {
                     this.setState({
                         events : res.data.map(event => event.name + ' ' + event.date.substring(0,10)),
-                        event : res.data[0].event + ' ' + res.data[0].date.substring(0,10)
+                        event : res.data[0].name + ' ' + res.data[0].date.substring(0,10)
                     })
                 }
             })
@@ -116,17 +116,14 @@ export default class EditUpdate extends Component {
                         onChange={this.onChangeProduct}>
                         {
                             this.state.products.map(function(product) {
-                                return <option
-                                    key={product}
-                                    value={product}>{product}    
-                                    </option>;
+                                return <option key={product} value={product}> {product} </option>;
                             })
                         }
                     </select>
                 </div>
 
                 <div className="form-group">
-                    <label>Event : </label>
+                    <label>Evénement : </label>
                     <select ref="userInput"
                         required
                         className="form-control"
@@ -134,10 +131,7 @@ export default class EditUpdate extends Component {
                         onChange={this.onChangeEvent}>
                         {
                             this.state.events.map(function(event) {
-                                return <option
-                                    key={event}
-                                    value={event}>{event}    
-                                    </option>;
+                                return <option key={event} value={event}> {event} </option>;
                             })
                         }
                     </select>
