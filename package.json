@@ -20,7 +20,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && npm run build"
+    "heroku-postbuild": "react-scripts start && node backend/server.js" //"NPM_CONFIG_PRODUCTION=false npm install npm && npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,6 +39,6 @@
   },
   "proxy" : "http://localhost:5000",
   "engines": {
-    "node": "10.16.0"
+    "node": "12.16.1"
   }
 }
